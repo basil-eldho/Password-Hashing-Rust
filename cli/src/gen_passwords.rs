@@ -36,6 +36,8 @@ pub fn gen_passwords(chars: u8, out_file: Option<PathBuf>, threads: usize, num: 
         });
     }
 
+    drop(tx);
+
     let mut pwd_list = Vec::new();
     for pwd in rx {
         pwd_list.push(pwd);
