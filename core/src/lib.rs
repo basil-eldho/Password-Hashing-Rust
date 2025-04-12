@@ -1,5 +1,7 @@
+use crate::utility::ParseValue;
 use tracing::error;
 pub mod args;
+mod utility;
 
 pub fn max_threads(s: &str) -> Result<usize, String> {
     let threads = s.parse_value("Failed to parse the thread count as a number")?;
