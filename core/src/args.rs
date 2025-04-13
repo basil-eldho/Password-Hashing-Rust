@@ -39,10 +39,11 @@ impl fmt::Display for Algorithm {
 
 impl Algorithm {
     pub fn len(&self) -> usize {
-        match self {
-            Algorithm::Md5 => 3,
-            _ => 6,
-        }
+        self.as_bytes().len()
+    }
+
+    pub fn is_empty(&self) -> bool {
+        false
     }
 
     pub fn as_bytes(&self) -> &[u8] {
