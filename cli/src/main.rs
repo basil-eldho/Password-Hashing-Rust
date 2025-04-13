@@ -1,6 +1,9 @@
 mod gen_passwords;
+mod gen_hashes;
 
 use crate::gen_passwords::gen_passwords;
+use crate::gen_hashes::gen_hashes;
+
 use hashassin_core::args::Algorithm;
 use hashassin_core::max_num;
 use hashassin_core::max_threads;
@@ -72,7 +75,7 @@ fn main() {
             threads,
             algorithm,
         } => {
-            // gen_hashes(in_file, out_file, threads, algorithm);
+            gen_hashes(in_file, out_file, threads, algorithm);
         }
         Commands::DumpHashes { in_file } => {
             // dump_hashes(in_file);

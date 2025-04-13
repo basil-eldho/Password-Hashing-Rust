@@ -1,5 +1,8 @@
 .idea
+*.hashes
 
 # Added by cargo
 
 /target
+
+/test
